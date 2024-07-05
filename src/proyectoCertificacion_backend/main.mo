@@ -99,7 +99,7 @@ actor Pacientes {
 
     IDGenerate.put(Nat32.toText(generaID()), register);
 
-    Debug.print("Paciente registrado correctamente, ID: " # Nat32.toText(ID));
+    Debug.print("¡Paciente registrado correctamente! ID: " # Nat32.toText(ID));
     return true;
   };
 
