@@ -83,7 +83,7 @@ actor Pacientes {
       not Text.contains(correo, #text "@") or
       not Text.contains(correo, #text ".")
     ) {
-      Debug.print("Error: El formato para el correo debe contener los simbolos '@' y '.' y tener entre 13 y 100 caracteres ");
+      Debug.print("Error: El formato para el correo debe contener los simbolos '@' y '.' y tener entre 13 y 100 caracteres.");
       return false;
     };
 
@@ -105,7 +105,14 @@ actor Pacientes {
 
   public query func getPaciente(id: Text) : async ?PacienteInfo {
     let paciente: ?PacienteInfo = IDGenerate.get(id);
-    return paciente;
+    switch (paciente) {
+      case (null) {
+        return null;
+      };
+      case (_) {
+        return paciente;
+      };
+    };
   };
 
   public query func getPacientes() : async [(Text, PacienteInfo)] {
@@ -145,7 +152,7 @@ public shared func updatePaciente(
   };
 
   if (edad < 0 or edad > 110) {
-    Debug.print("Error: La edad debe estar entre 0 y 120.");
+    Debug.print("Error: La edad debe estar entre 0 y 110.");
     return false;
   };
 
