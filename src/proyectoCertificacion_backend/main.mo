@@ -63,7 +63,7 @@ actor Pacientes {
     };
 
     if (edad < 0 or edad > 110) {
-      Debug.print("Error: La edad debe estar entre 0 y 120.");
+      Debug.print("Error: La edad debe estar entre 0 y 110.");
       return false;
     };
 
